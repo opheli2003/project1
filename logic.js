@@ -1,12 +1,16 @@
 
 let ul = document.getElementById('ul')
-let start = document.getElementById('start')
+
 let nextButton = document.getElementById('btnNext');
 let quizbox = document.getElementById('questionBox')
 let opt1 = document.getElementById('opt1')
 let opt2 = document.getElementById('opt2')
 let opt3 = document.getElementById('opt3')
 let opt4 = document.getElementById('opt4')
+let reset = document.getElementById('reset')
+
+
+
 
 
 let app={
@@ -37,6 +41,8 @@ let app={
     
         index:0,
 
+        
+
         load:function(){
             // load is a state, react to page states when the script executes
             // for example, here load executes the function when the page is loading
@@ -49,6 +55,7 @@ let app={
             }
             else {
                 quizbox.innerHTML="Test finished!";
+                reset.style.display = "block"
                 ul.style.display="none";
                 nextButton.style.display="none";
             }
@@ -79,7 +86,8 @@ let app={
         },
         
 
-        
+       
+
         preventClick:function(){
             // preventClick here is also a state which prevents the action of the element targeted au clic
             for(let i=0; i<ul.children.length; i++){
@@ -105,6 +113,7 @@ let app={
         }
 }
 
+
 window.load=app.load();
 // window.onload or $(window).load() happens after all the content resources (images, etc) have been loaded.
 
@@ -117,3 +126,10 @@ function next(){
     app.next();
     app.allowClick();
 }
+
+document.getElementById('reset').addEventListener('click', function(){
+    window.location.reload();
+    return false});
+
+   
+     
