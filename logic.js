@@ -1,6 +1,5 @@
 
 let ul = document.getElementById('ul')
-
 let nextButton = document.getElementById('btnNext');
 let quizbox = document.getElementById('questionBox')
 let opt1 = document.getElementById('opt1')
@@ -8,9 +7,6 @@ let opt2 = document.getElementById('opt2')
 let opt3 = document.getElementById('opt3')
 let opt4 = document.getElementById('opt4')
 let reset = document.getElementById('reset')
-
-
-
 
 
 let app={
@@ -41,7 +37,6 @@ let app={
     
         index:0,
 
-        
 
         load:function(){
             // load is a state, react to page states when the script executes
@@ -84,10 +79,7 @@ let app={
                 // add a red className in CSS
             }
         },
-        
-
-       
-
+    
         preventClick:function(){
             // preventClick here is also a state which prevents the action of the element targeted au clic
             for(let i=0; i<ul.children.length; i++){
